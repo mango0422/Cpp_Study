@@ -9,7 +9,7 @@ class Employee{
     private:
         char name[100];
     public:
-        Employee(char * name){
+        Employee(const char * name){
             strcpy(this->name, name);
         }
         void ShowYourName() const{
@@ -21,7 +21,7 @@ class PermanentWorker : public Employee{
     private:
         int salary;
     public:
-        PermanentWorker(char * name, int money) : Employee(name), salary(money){}
+        PermanentWorker(const char * name, int money) : Employee(name), salary(money){}
         int Getpay() const{
             return salary;
         }

@@ -1,18 +1,18 @@
-#include "EmployeeHandler_CLASS.h"
+#include "CLASS.h"
 
 int main(void){
-    // Á÷¿ø°ü¸®¸¦ ¸ñÀûÀ¸·Î ¼³°èµÈ ÄÁÆ®·Ñ Å¬·¡½ºÀÇ °´Ã¼»ý¼º
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½
     EmployeeHandler handler;
 
-    // Á÷¿ø µî·Ï
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     handler.AddEmployee(new PermanentWorker("KIM", 1000));
     handler.AddEmployee(new PermanentWorker("LEE", 1500));
     handler.AddEmployee(new PermanentWorker("JUN", 2000));
 
-    // ÀÌ¹ø ´Þ¿¡ ÁöºÒÇØ¾ß ÇÒ ±Þ¿©ÀÇ Á¤º¸
+    // ï¿½Ì¹ï¿½ ï¿½Þ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     handler.ShowAllSalaryInfo();
 
-    // ÀÌ¹ø ´Þ¿¡ ÁöºÒÇØ¾ß ÇÒ ±Þ¿©ÀÇ ÃÑÇÕ
+    // ï¿½Ì¹ï¿½ ï¿½Þ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     handler.ShowTotalSalary();
     return (0);
 

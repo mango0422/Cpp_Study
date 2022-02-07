@@ -5,19 +5,28 @@
 #include <cstring>
 using namespace std;
 
-class PermanentWorker{
+class Employee{
     private:
         char name[100];
-        int salary;
     public:
-        PermanentWorker(char* name, int money): salary(money){
+        Employee(char * name){
             strcpy(this->name, name);
         }
+        void ShowYourName() const{
+            cout<<"name: "<<name<<endl;
+        }
+};
+
+class PermanentWorker : public Employee{
+    private:
+        int salary;
+    public:
+        PermanentWorker(char * name, int money) : Employee(name), salary(money){}
         int Getpay() const{
             return salary;
         }
         void ShowSalaryInfo() const{
-            cout<<"name: "<<name<<endl;
+            ShowYourName();
             cout<<"salary: "<<Getpay()<<endl<<endl;
         }
 };
@@ -48,18 +57,6 @@ class EmployeeHandler{
                 delete empList[i];
             }
         }   
-};
-
-class Employee{
-    private:
-        char name[100];
-    public:
-        Employee(char * name){
-            strcpy(this->name, name);
-        }
-        void ShowYourName() const{
-            cout<<"name: "<<name<<endl;
-        }
 };
 
 #endif

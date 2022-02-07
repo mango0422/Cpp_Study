@@ -50,6 +50,16 @@ class EmployeeHandler{
         }   
 };
 
-
+class Employee{
+    private:
+        char name[100];
+    public:
+        Employee(char * name){
+            strcpy(this->name, name);
+        }
+        void ShowYourName() const{
+            cout<<"name: "<<name<<endl;
+        }
+};
 
 #endif

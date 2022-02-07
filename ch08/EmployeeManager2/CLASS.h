@@ -41,22 +41,22 @@ class EmployeeHandler{
             empList[empNum++]=emp;
         }
         void ShowAllSalaryInfo() const{
-            for(int i=0; i<empNum; i++){
-                empList[i]->ShowSalaryInfo();
-            }
+            // for(int i=0; i<empNum; i++){
+            //     empList[i]->ShowSalaryInfo();
+            // }
         }
         void ShowTotalSalary() const{
             int sum=0;
-            for(int i=0; i<empNum; i++){
-                sum+=empList[i]->Getpay();
-            }
+            // for(int i=0; i<empNum; i++){
+            //     sum+=empList[i]->Getpay();
+            // }
             cout<<"salary sum: "<<sum<<endl;
         }
         ~EmployeeHandler(){
             for(int i=0; i<empNum; i++){
                 delete empList[i];
             }
-        }   
+        }
 };
 
 #endif

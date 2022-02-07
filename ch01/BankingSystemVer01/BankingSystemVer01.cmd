@@ -1,0 +1,1 @@
+g++ main.cpp src_ShowMenu.cpp src_MakeAccount.cpp src_DepositMoney.cpp src_WithdrawMoney.cpp src_ShowAllAccInfo.cpp -o main

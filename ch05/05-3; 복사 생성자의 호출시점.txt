@@ -1,0 +1,40 @@
+복사 생성자가 호출되는 시점은?
+
+● case 1: 기존에 생성된 객체를 이용해서 새로운 객체를 초기화하는 경우
+    ex) Person man1("Lee don woo", 29);
+        Person man2 = man1;     // 복사 생성자 호출
+● case 2: Call-by-value 방식의 함수호출 과정에서 객체를 인자로 전달하는 경우
+● case 3: 객체를 반환하되, 참조형으로 반환하지 않는 경우
+이들은 모두 "객체를 새로 생성해야 한다. 단, 생성과 동시에 동일한 자료형의 객체로 초기화해야 한다!" 라는 공통점을 지닌다.
+
++ 메모리 공간의 할당과 초기화가 동시에 일어나는 상황!
+ex1.) int num1 = num2;
+ex2.) int SimpleFunc(int n){...}
+      int main(void){
+          int num = 10;
+          SimpleFunc(num);  // 호출되는 순간 매개변수 n이 할당과 동시에 초기화!
+          ....
+      }
+ex3.) int SimpleFunc(int n){
+        .......
+        return n;   // 반환하는 순간 메모리 공간이 할당되면서 동시에 초기화!
+      }
+      int main(void){
+          int num=10;
+          cout<<SimpleFunc(num)<<endl;
+      }
+
+결론) "함수가 값을 반환하면, 별도의 메모리 공간이 할당되고, 이 공간에 반환 값이 저장된다(반환 값으로 초기화된다)."
+ex4.) SoSimple obj2 = obj1;     // obj1도 SoSimple 객체라 가정
+ex5.) SoSimple SimpleFuncObj(SoSimple ob){      // 함수호출간 ob객체가 생성되며 전달되는 인자로 초기화 됨.
+          ...
+      }
+      int main(void){
+          SoSimple obj;
+          SimpleFuncObj(obj);
+          ......
+      }
+ex6.) SoSimple SimpleFuncObj(SoSimple ob){
+          ....
+          return ob;    // 반환하는 순간 메모리 공간이 할당되면서 동시에 초기화!
+      }

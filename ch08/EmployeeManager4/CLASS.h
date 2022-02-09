@@ -87,7 +87,8 @@ class SalesWorker : public PermanentWorker{
             return PermanentWorker::Getpay() + (int)(salesResult*bonusRatio);
         }
         void ShowSalaryInfo() const{
-            
+            ShowYourName();
+            cout<<"salary: "<<GetPay()<<endl<<endl;
         }
 };
 

@@ -33,11 +33,11 @@ class PermanentWorker : public Employee{
 
 class EmployeeHandler{
     private:
-        PermanentWorker *empList[50];
+        Employee *empList[50];
         int empNum;
     public:
         EmployeeHandler(): empNum(0){}
-        void AddEmployee(PermanentWorker* emp){
+        void AddEmployee(Employee* emp){
             empList[empNum++]=emp;
         }
         void ShowAllSalaryInfo() const{
@@ -69,6 +69,9 @@ class TemporaryWorker : public Employee{
             workTime += time;
         }
         int GetPay() const{
+            return workTime*payPerHour;
+        }
+        void ShowSalaryInfo() const{
             ShowYourName();
             cout<<"salary: "<<GetPay()<<endl<<endl;
         }

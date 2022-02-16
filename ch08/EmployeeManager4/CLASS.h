@@ -1,5 +1,5 @@
-#ifndef __PermanentWorker_H_
-#define __PermanentWorker_H_
+#ifndef __Clas_H_
+#define __Clas_H_
 
 #include <iostream>
 #include <cstring>
@@ -15,6 +15,10 @@ class Employee{
         void ShowYourName() const{
             cout<<"name: "<<name<<endl;
         }
+        virtual int GetPay() const{
+            return (0);
+        }
+        virtual void ShowSalaryInfo() const{}
 };
 
 class PermanentWorker : public Employee{
@@ -41,15 +45,15 @@ class EmployeeHandler{
             empList[empNum++]=emp;
         }
         void ShowAllSalaryInfo() const{
-            // for(int i=0; i<empNum; i++){
-            //     empList[i]->ShowSalaryInfo();
-            // }
+            for(int i=0; i<empNum; i++){
+            empList[i]->ShowSalaryInfo();
+            }
         }
         void ShowTotalSalary() const{
             int sum=0;
-            // for(int i=0; i<empNum; i++){
-            //     sum+=empList[i]->Getpay();
-            // }
+            for(int i=0; i<empNum; i++){
+            sum+=empList[i]->GetPay();
+            }
             cout<<"salary sum: "<<sum<<endl;
         }
         ~EmployeeHandler(){

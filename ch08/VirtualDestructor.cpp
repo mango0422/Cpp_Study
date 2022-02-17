@@ -69,4 +69,4 @@ int main(void){
 // 1. 객체 소멸과정에서 호출 : virtual ~First()
 // 2. virtual 소멸자이므로 대신 호출 : virtual ~Third()
 // 3. ~Third() 실행 후 이어서 실행 : virtual ~Second()
-// 4. ~Second() 실행 후 이어서 실행 : virtual ~First()
+// 4. ~Second() 실행 후 이어서 실행 : virtual ~First() 

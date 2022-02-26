@@ -12,8 +12,7 @@
             "args": [
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-g"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "group": "build",
 
@@ -77,7 +76,7 @@
         // 바이너리 실행(Windows)
         {
             "label": "execute",
-            "command": "cmd",
+            "command": "powershell",
             "group": "test",
             "args": [
                 "/C", "${fileDirname}\\${fileBasenameNoExtension}"

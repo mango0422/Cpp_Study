@@ -47,9 +47,9 @@ int main(void){
     --pos;  // operator--(pos); 로 해석됨.
     pos.ShowPosition();
 
-    ++(++pos);  // ++(pos.operator++()); -> (pos의 참조 값).operator++();
+    ++(++pos);  // ++(pos.operator++()); -> ++(pos의 참조 값); -> (pos의 참조 값).operator++();
     pos.ShowPosition();
-    --(--pos);
+    --(--pos);  // --(operator--(pos)); -> --(pos의 참조 값); -> operator--(pos의 참조 값);
     pos.ShowPosition();
     return (0);
 }

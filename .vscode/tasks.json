@@ -12,7 +12,8 @@
             "args": [
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-g"
             ],
             "group": "build",
 

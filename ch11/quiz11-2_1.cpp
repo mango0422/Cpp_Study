@@ -42,13 +42,13 @@ class BoundCheckPointPtrArray{
             }
             return arr[idx];
         }
-        // POINT_PTR operator [] (int idx) const{
-        //     if(idx<0 || idx>=arrlen){
-        //         cout<<"Array index out of bound exception"<<endl;
-        //         exit(1);
-        //     }
-        //     return arr[idx];
-        // }
+        POINT_PTR operator [] (int idx) const{
+            if(idx<0 || idx>=arrlen){
+                cout<<"Array index out of bound exception"<<endl;
+                exit(1);
+            }
+            return arr[idx];
+        }
         int GetArrLen() const{
             return arrlen;
         }

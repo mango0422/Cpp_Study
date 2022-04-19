@@ -20,7 +20,7 @@ class Book{
             strcpy(title, ref.title);
             strcpy(isbn, ref.isbn);
         }
-        Book& operator=(const Book& ref){   // ´ëÀÔ ¿¬»êÀÚ
+        Book& operator=(const Book& ref){   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             delete []title;
             delete []isbn;
 
@@ -32,9 +32,9 @@ class Book{
             return *this;
         }
         void ShowBookInfo() const {
-            cout<<"Á¦¸ñ: "<<title<<endl;
+            cout<<"ï¿½ï¿½ï¿½ï¿½: "<<title<<endl;
             cout<<"ISBN: "<<isbn<<endl;
-            cout<<"°¡°Ý: "<<price<<"¿ø"<<endl;
+            cout<<"ï¿½ï¿½ï¿½ï¿½: "<<price<<"ï¿½ï¿½"<<endl;
         }
         ~Book(){
             delete []title;
@@ -54,7 +54,7 @@ class EBook : public Book{
             DRMKey = new char[strlen(ref.DRMKey) + 1];
             strcpy(DRMKey, ref.DRMKey);
         }
-        EBook& operator=(const EBook& ref){ // ´ëÀÔ ¿¬»êÀÚ
+        EBook& operator=(const EBook& ref){ // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             Book::operator=(ref);
             delete []DRMKey;
             cout<<"EBook operator=()"<<endl;
@@ -64,7 +64,7 @@ class EBook : public Book{
         }
         void ShowBookInfo() const{
             Book::ShowBookInfo();
-            cout<<"ÀÎÁõÅ°: "<<DRMKey<<endl<<endl;
+            cout<<"ï¿½ï¿½ï¿½ï¿½Å°: "<<DRMKey<<endl<<endl;
         }
         ~EBook(){
             delete []DRMKey;
@@ -72,7 +72,7 @@ class EBook : public Book{
 };
 
 int main(){
-    EBook book1("À±¼º¿ìÀÇ ¿­Ç÷ C++ ÇÁ·Î±×·¡¹Ö", "978-89-960940-4-3",27000, "2QW6-EDYD-SQB7-MZLZ");
+    EBook book1("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ C++ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½", "978-89-960940-4-3",27000, "2QW6-EDYD-SQB7-MZLZ");
     book1.ShowBookInfo();
     
     EBook book2 = book1;
@@ -86,7 +86,7 @@ int main(){
 }
 
 /*
- * quiz11-2ÀÇ ÇÙ½É
- * 1. ÇÇ»ó¼Ó Å¬·¡½ºÀÇ ¸â¹ö°ª º¹»ç »ý¼ºÀÚ¸¦ »ç¿ëÀÚ°¡ Á÷Á¢ Á¤ÀÇÇÏ¿© »ç¿ëÇÑ´Ù.
- * 2. »ó¼Ó Å¬·¡½º´Â ÇÇ»ó¼Ó Å¬·¡½º ¸â¹ö°ª º¹»ç»ý¼ºÀÚ¸¦ ºÒ·¯¿Í »ç¿ëÇÑ´Ù.
+ * quiz11-2ï¿½ï¿½ ï¿½Ù½ï¿½
+ * 1. ï¿½Ç»ï¿½ï¿? Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ú°ï¿? ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿?.
+ * 2. ï¿½ï¿½ï¿? Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç»ï¿½ï¿? Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿? ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿?.
  */

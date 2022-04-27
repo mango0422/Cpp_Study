@@ -1,7 +1,7 @@
 /*
- * íŒŒì¼ì´ë¦„ : AccountArray.h
- * ì‘ì„±ì : ì„œìš©ì¤€
- * ì—…ë°ì´íŠ¸ ì •ë³´ : [2020. 04.25] íŒŒì¼ë²„ì „ 0.8
+ * ÆÄÀÏÀÌ¸§ : AccountArray.h
+ * ÀÛ¼ºÀÚ : ¼­¿ëÁØ
+ * ¾÷µ¥ÀÌÆ® Á¤º¸ : [2020. 04.25] ÆÄÀÏ¹öÀü 0.8
  */
 
 #ifndef __ACCOUN_ARRAY_H__
@@ -14,8 +14,8 @@ class BoundCheckAccountPtrArray{
     private:
         ACCOUNT_PTR * arr;
         int arrlen;
-        BoundCheckAccountPtrArray(const BoundCheckAccountPtrArray& arr);
-        BoundCheckAccountPtrArray& operator=(const BoundCheckAccountPtrArray& arr);
+        BoundCheckAccountPtrArray(const BoundCheckAccountPtrArray& arr){}
+        BoundCheckAccountPtrArray& operator=(const BoundCheckAccountPtrArray& arr){}
     public:
         BoundCheckAccountPtrArray(int len=100);
         ACCOUNT_PTR& operator[] (int idx);

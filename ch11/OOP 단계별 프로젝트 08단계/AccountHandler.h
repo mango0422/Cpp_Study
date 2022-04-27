@@ -1,7 +1,7 @@
 /*
- * íŒŒì¼ì´ë¦„ : AccountHandler.h
- * ìž‘ì„±ìž : ì„œìš©ì¤€
- * ì—…ë°ì´íŠ¸ ì •ë³´ : [2020. 04.25] íŒŒì¼ë²„ì „ 0.8
+ * ÆÄÀÏÀÌ¸§ : AccountHandler.h
+ * ÀÛ¼ºÀÚ : ¼­¿ëÁØ
+ * ¾÷µ¥ÀÌÆ® Á¤º¸ : [2020. 04.25] ÆÄÀÏ¹öÀü 0.8
  */
 
 #ifndef __ACCOUN_HANDLER_H_

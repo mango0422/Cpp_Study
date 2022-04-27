@@ -1,12 +1,36 @@
 /*
- * íŒŒì¼ì´ë¦„ : AccountArray.cpp
- * ì‘ì„±ì : ì„œìš©ì¤€
- * ì—…ë°ì´íŠ¸ ì •ë³´ : [2020. 04.25] íŒŒì¼ë²„ì „ 0.8
+ * ÆÄÀÏÀÌ¸§ : AccountArray.cpp
+ * ÀÛ¼ºÀÚ : ¼­¿ëÁØ
+ * ¾÷µ¥ÀÌÆ® Á¤º¸ : [2020. 04.25] ÆÄÀÏ¹öÀü 0.8
  */
 
  #include "BankingCommonDecl.h"
  #include "AccountArray.h"
  
- BoundCheckAccountPtrArray::BoundcheckAccountPtrArray(int len) : arrlen(len){
+ BoundCheckAccountPtrArray::BoundCheckAccountPtrArray(int len) :arrlen(len){
      arr=new ACCOUNT_PTR[len];
+ }
+
+ ACCOUNT_PTR& BoundCheckAccountPtrArray::operator[] (int idx){
+     if(idx<0 || idx>=arrlen){
+         cout<<"Array index out bound exception"<<endl;
+         exit(1);
+     }
+     return arr[idx];
+ }
+
+ ACCOUNT_PTR BoundCheckAccountPtrArray::operator[] (int idx) const{
+     if(idx<0 || idx>=arrlen){
+         cout<<"Array index out of bound exception"<<endl;
+         exit(1);
+     }
+     return arr[idx];
+ }
+
+ int BoundCheckAccountPtrArray::GetArrLen() const{
+     return arrlen;
+ }
+
+ BoundCheckAccountPtrArray::~BoundCheckAccountPtrArray(){
+     delete []arr; 
  }

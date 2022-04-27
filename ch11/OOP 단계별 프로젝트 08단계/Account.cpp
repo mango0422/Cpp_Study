@@ -1,11 +1,11 @@
 /*
- * íŒŒì¼ì´ë¦„ : Account.cpp
- * ì‘ì„±ì : ì„œìš©ì¤€
- * ì—…ë°ì´íŠ¸ ì •ë³´ : [2020. 04.25] íŒŒì¼ë²„ì „ 0.8
+ * ÆÄÀÏÀÌ¸§ : Account.cpp
+ * ÀÛ¼ºÀÚ : ¼­¿ëÁØ
+ * ¾÷µ¥ÀÌÆ® Á¤º¸ : [2020. 04.25] ÆÄÀÏ¹öÀü 0.8
  */
 
 #include "BankingCommonDecl.h"
-#include <Account.h>
+#include "Account.h"
 
 Account::Account(int ID, int money, char * name) : accID(ID), balance(money){
     cusName = new char[strlen(name) + 1];
@@ -17,12 +17,14 @@ Account::Account(const Account& ref) : accID(ref.accID), balance(ref.balance){
     strcpy(cusName, ref.cusName);
 }
 
-Account& Account::operator=(const Account& ref){ // ì¶”ê°€ëœ ì •ì˜
+Account& Account::operator=(const Account& ref){ // Ãß°¡µÈ Á¤ÀÇ
     accID=ref.accID;
     balance=ref.balance;
+
+    delete []cusName;
     cusName=new char[strlen(ref.cusName)+1];
     strcpy(cusName, ref.cusName);
-    return * this;
+    return *this;
 }
 
 int Account::GetAccID() const{
@@ -33,7 +35,7 @@ void Account::Deposit(int money){
     balance+=money;
 }
 
-int Account::withdraw(int money){
+int Account::Withdraw(int money){
     if(balance<money){
         return 0;
     }
@@ -42,9 +44,9 @@ int Account::withdraw(int money){
 }
 
 void Account::ShowAccInfo() const{
-    cout<<"ê³„ì¢Œ ID: "<<accID<<endl;
-    cout<<"ì´  ë¦„: "<<cusName<<endl;
-    cout<<"ì”  ì•¡: "<<balance<<endl;
+    cout<<"°èÁÂ ID: "<<accID<<endl;
+    cout<<"ÀÌ  ¸§: "<<cusName<<endl;
+    cout<<"ÀÜ  ¾×: "<<balance<<endl;
 }
 
 Account::~Account(){
